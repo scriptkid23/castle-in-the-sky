@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var animation_player = $AnimationPlayer
+@onready var sound = $AudioStreamPlayer2D
 
 var input = Vector2.ZERO
 
@@ -18,6 +19,8 @@ func _ready():
 	
 func play_idle_animation():
 	animation_player.play("front_idle")
+	if sound.playing:
+		sound.stop()
 		
 
 func get_input():
@@ -26,7 +29,12 @@ func get_input():
 	
 	return input.normalized()
 
+
+
 func play_walk_animation():
+	if not sound.playing:  # Start playing sound only if it's not already playing
+		sound.play()
+		
 	if abs(input.x) > abs(input.y):
 		if input.x > 0:
 			animation_player.play("right_walk")
@@ -37,6 +45,7 @@ func play_walk_animation():
 			animation_player.play("font_walk")
 		else: 
 			animation_player.play("back_walk")
+			
 func player_movement(delta):
 	input = get_input()
 	

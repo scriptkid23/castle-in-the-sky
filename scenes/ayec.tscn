@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://0pocr388tmgo"]
+
+[ext_resource type="AudioStream" uid="uid://15flcdkh8rgk" path="res://audio/ayec.mp3" id="1_nty0f"]
+
+[node name="AYEC" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_nty0f")

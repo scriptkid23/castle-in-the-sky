@@ -1,14 +1,33 @@
-[gd_scene load_steps=3 format=3 uid="uid://bn6gvw1p74n03"]
+[gd_scene load_steps=6 format=3 uid="uid://dstdfkvrgcb51"]
 
 [ext_resource type="PackedScene" uid="uid://c6brtkrgu2jjq" path="res://scenes/map.tscn" id="1_5fgwq"]
 [ext_resource type="PackedScene" uid="uid://su72yl3tvrc5" path="res://scenes/character.tscn" id="2_y77au"]
+[ext_resource type="PackedScene" uid="uid://cbulwi11qxu46" path="res://scenes/BlackSmith.tscn" id="3_bifj0"]
+[ext_resource type="PackedScene" uid="uid://cptb14o2b3sht" path="res://scenes/SoundMan.tscn" id="3_do5ik"]
+[ext_resource type="PackedScene" uid="uid://hsh27y6hdywh" path="res://scenes/texture_rect.tscn" id="5_w0yuj"]
 
-[node name="Game" type="Node2D"]
-position = Vector2(-3, 0)
+[node name="Game" type="Node2D" groups=["Area2D", "Character"]]
+position = Vector2(-13, -1)
 
 [node name="TileMap" parent="." instance=ExtResource("1_5fgwq")]
 position = Vector2(142, 124)
 
+[node name="SoundMan" parent="." instance=ExtResource("3_do5ik")]
+position = Vector2(801, 190)
+scale = Vector2(0.566141, 0.566141)
+
 [node name="Character" parent="." instance=ExtResource("2_y77au")]
-position = Vector2(142, 173)
+position = Vector2(164, 181)
 scale = Vector2(0.688468, 0.688468)
+
+[node name="BlackSmith" parent="." instance=ExtResource("3_bifj0")]
+position = Vector2(375, 531)
+scale = Vector2(-5.30668, 2.9901)
+
+[node name="TextureRect" parent="BlackSmith" instance=ExtResource("5_w0yuj")]
+visible = false
+offset_left = 3.76883
+offset_top = -17.3907
+offset_right = 3027.77
+offset_bottom = 4014.61
+scale = Vector2(-0.00645851, 0.0108625)

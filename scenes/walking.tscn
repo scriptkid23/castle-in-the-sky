@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3p5u1otpl87g"]
+
+[ext_resource type="AudioStream" uid="uid://dcn8y6sh5qhgn" path="res://audio/running.mp3" id="1_empkv"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_empkv")
+pitch_scale = 0.92
