@@ -13,6 +13,7 @@ func _process(delta):
 
 func _on_body_entered(body):
 	$AYEC.play()
+	$Label.visible=true
 	$AnimatedSprite2D.visible = true
 	$WhiteBird.visible = true
 	pass # Replace with function body.
