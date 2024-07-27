@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://su72yl3tvrc5" path="res://scenes/character.tscn" id="2_y77au"]
 [ext_resource type="PackedScene" uid="uid://cbulwi11qxu46" path="res://scenes/BlackSmith.tscn" id="3_bifj0"]
 [ext_resource type="PackedScene" uid="uid://cptb14o2b3sht" path="res://scenes/SoundMan.tscn" id="3_do5ik"]
-[ext_resource type="PackedScene" uid="uid://hsh27y6hdywh" path="res://scenes/texture_rect.tscn" id="5_w0yuj"]
-[ext_resource type="Texture2D" uid="uid://cxv18bpgta6t1" path="res://assets/package/assets/9640697b-0740-4e08-af33-7355cc42662f.jpg" id="6_2l8h2"]
+[ext_resource type="PackedScene" uid="uid://bpegwhoisqsw3" path="res://scenes/bird.tscn" id="5_2rcmk"]
+[ext_resource type="PackedScene" uid="uid://bgnb8wtv1fnhh" path="res://scenes/WhiteBird.tscn" id="6_1ba0q"]
 
 [node name="Game" type="Node2D" groups=["Area2D", "Character"]]
 position = Vector2(-13, -1)
@@ -25,11 +25,13 @@ scale = Vector2(0.688468, 0.688468)
 position = Vector2(375, 531)
 scale = Vector2(-5.30668, 2.9901)
 
-[node name="TextureRect" parent="BlackSmith" instance=ExtResource("5_w0yuj")]
+[node name="AnimatedSprite2D" parent="BlackSmith" instance=ExtResource("5_2rcmk")]
 visible = false
-offset_left = -0.188444
-offset_top = -13.043
-offset_right = 3023.81
-offset_bottom = 4018.96
-scale = Vector2(-0.00351193, 0.00863275)
-texture = ExtResource("6_2l8h2")
+position = Vector2(0.376883, 5.35099)
+rotation = 3.14159
+scale = Vector2(0.188442, -0.334437)
+
+[node name="WhiteBird" parent="BlackSmith" instance=ExtResource("6_1ba0q")]
+visible = false
+position = Vector2(-11.1181, 5.35099)
+scale = Vector2(0.171262, 0.333719)
