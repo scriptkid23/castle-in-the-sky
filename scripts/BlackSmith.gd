@@ -15,3 +15,9 @@ func _on_body_entered(body):
 	$AYEC.play()
 	$TextureRect.visible = true;
 	pass # Replace with function body.
+
+
+func _on_body_exited(body):
+	$AYEC.stop()
+	$TextureRect.visible = false;
+	pass # Replace with function body.
