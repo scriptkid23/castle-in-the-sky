@@ -18,9 +18,10 @@ func _ready():
 	
 	
 func play_idle_animation():
-	animation_player.play("front_idle")
 	if sound.playing:
 		sound.stop()
+	animation_player.play("front_idle")
+
 		
 
 func get_input():
@@ -29,6 +30,19 @@ func get_input():
 	
 	return input.normalized()
 
+func play_idle_animation_based_on_direction():
+	if velocity == Vector2.ZERO: return
+	
+	if abs(velocity.x) > abs(velocity.y):
+		if velocity.x > 0:
+			animation_player.play("right_idle")
+		else:
+			animation_player.play("left_idle")
+	else:
+		if velocity.y > 0:
+			animation_player.play("front_idle")
+		else:
+			animation_player.play("back_idle")
 
 
 func play_walk_animation():
@@ -54,8 +68,8 @@ func player_movement(delta):
 			velocity -= velocity.normalized() * (friction * delta)
 			
 		else:
+			play_idle_animation_based_on_direction()			
 			velocity = Vector2.ZERO
-			play_idle_animation()
 	else:
 		velocity += (input * accel * delta)
 		velocity = velocity.limit_length(max_speed)
@@ -67,4 +81,3 @@ func player_movement(delta):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	player_movement(delta)
-	pass
