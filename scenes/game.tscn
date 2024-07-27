@@ -49,3 +49,6 @@ theme_override_constants/outline_size = 5
 theme_override_constants/shadow_outline_size = 0
 theme_override_fonts/font = ExtResource("7_y3d3m")
 text = "ANH IU ELM    "
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.0449992, 0.0272528, 0.00268721, 1)

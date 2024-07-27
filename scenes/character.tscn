@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://su72yl3tvrc5"]
+[gd_scene load_steps=23 format=3 uid="uid://su72yl3tvrc5"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_u3goi"]
 [ext_resource type="Texture2D" uid="uid://b26fsp3bj7r2p" path="res://assets/package/spr_player_front_walk.png" id="1_w65vk"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://di3g48wgffg7e" path="res://assets/package/spr_player_right_walk.png" id="7_rkcvv"]
 [ext_resource type="Texture2D" uid="uid://4j6wx2e2h2sn" path="res://assets/package/spr_player_right_idle.png" id="8_6is0e"]
 [ext_resource type="PackedScene" uid="uid://b3p5u1otpl87g" path="res://scenes/walking.tscn" id="10_cakbr"]
+[ext_resource type="Texture2D" uid="uid://ldskhj8mic5v" path="res://assets/package/light.png" id="11_x8kkn"]
 
 [sub_resource type="Animation" id="Animation_b7k8o"]
 length = 0.001
@@ -524,3 +525,8 @@ zoom = Vector2(4, 4)
 position_smoothing_enabled = true
 
 [node name="AudioStreamPlayer2D" parent="." instance=ExtResource("10_cakbr")]
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="PointLight2D" type="PointLight2D" parent="Node2D"]
+texture = ExtResource("11_x8kkn")

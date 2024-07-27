@@ -1,5 +1,9 @@
 extends  Area2D
 
+signal soundman_changed(new_state)
+
+
+
 @onready var hello_anim = $HelloAnim
 
 
