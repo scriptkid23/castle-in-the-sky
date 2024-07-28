@@ -11,13 +11,19 @@ config_version=5
 [application]
 
 config/name="castle-in-the-sky"
-run/main_scene="res://scenes/game.tscn"
+run/main_scene="res://scenes/IntroScreen.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 BackgroundMusic="*res://scenes/BackgroundMusic.tscn"
+
+[display]
+
+window/size/viewport_width=1024
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 
 [rendering]
 

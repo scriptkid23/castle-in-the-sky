@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvpfhsjta5pj7"]
+
+[ext_resource type="Texture2D" uid="uid://ccmho8ag70x6b" path="res://assets/package/assets/Pixel UI pack 1.png" id="1_dx6b7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tgopj"]
+atlas = ExtResource("1_dx6b7")
+region = Rect2(448, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8hlwi"]
+atlas = ExtResource("1_dx6b7")
+region = Rect2(480, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0egtq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tgopj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8hlwi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Tutorial" type="Sprite2D"]
+
+[node name="Right" type="AnimatedSprite2D" parent="."]
+position = Vector2(26, -8)
+rotation = -1.57055
+sprite_frames = SubResource("SpriteFrames_0egtq")
+autoplay = "default"
+frame_progress = 0.0707161
+
+[node name="Left" type="AnimatedSprite2D" parent="."]
+position = Vector2(-43, -8)
+rotation = 1.56772
+sprite_frames = SubResource("SpriteFrames_0egtq")
+autoplay = "default"
+frame_progress = 0.33285
+
+[node name="Bottom" type="AnimatedSprite2D" parent="."]
+position = Vector2(-9, -8)
+rotation = -0.00308824
+sprite_frames = SubResource("SpriteFrames_0egtq")
+autoplay = "default"
+frame_progress = 0.645175
+
+[node name="Up" type="AnimatedSprite2D" parent="."]
+position = Vector2(-9, -42)
+rotation = -3.14196
+sprite_frames = SubResource("SpriteFrames_0egtq")
+autoplay = "default"
+frame_progress = 0.225528

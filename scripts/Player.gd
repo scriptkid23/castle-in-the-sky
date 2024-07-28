@@ -15,6 +15,9 @@ const accel = 1500
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	play_idle_animation()
+	
+	await get_tree().create_timer(3).timeout
+	$Tutorial.hide()
 	pass # Replace with function body.
 	
 	
