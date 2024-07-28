@@ -1,8 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://cptb14o2b3sht"]
+[gd_scene load_steps=18 format=3 uid="uid://cptb14o2b3sht"]
 
 [ext_resource type="Script" path="res://scripts/Soundman.gd" id="1_haau5"]
 [ext_resource type="Texture2D" uid="uid://dtyt64ffx44b0" path="res://assets/package/soundhuman/human01.png" id="1_jv727"]
 [ext_resource type="PackedScene" uid="uid://b0jeh3jwd6wax" path="res://scenes/HelloAnim.tscn" id="3_5qi1r"]
+[ext_resource type="AudioStream" uid="uid://dp52i82tx4nly" path="res://audio/6138632941825168505.wav" id="4_n2mq3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2uwnf"]
 atlas = ExtResource("1_jv727")
@@ -106,6 +107,9 @@ shape = SubResource("CircleShape2D_q7c3j")
 [node name="HelloAnim" parent="." instance=ExtResource("3_5qi1r")]
 visible = false
 position = Vector2(7, -17)
+
+[node name="MyVoice" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_n2mq3")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

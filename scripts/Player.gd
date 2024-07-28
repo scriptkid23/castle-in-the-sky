@@ -1,7 +1,8 @@
 extends CharacterBody2D
 
 @onready var animation_player = $AnimationPlayer
-@onready var sound = $AudioStreamPlayer2D
+@onready var sound = $Walking
+@onready var light = $Light
 
 var input = Vector2.ZERO
 
@@ -18,11 +19,16 @@ func _ready():
 	
 	
 func play_idle_animation():
-	if sound.playing:
-		sound.stop()
+	#if sound.playing:
+		#sound.stop()
 	animation_player.play("front_idle")
 
-		
+func light_turn_off():
+	light.visible = false
+
+func light_turn_on():
+	light.visible = true
+
 
 func get_input():
 	input.x = int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left"))
@@ -46,8 +52,8 @@ func play_idle_animation_based_on_direction():
 
 
 func play_walk_animation():
-	if not sound.playing:  # Start playing sound only if it's not already playing
-		sound.play()
+	#if not sound.playing:  # Start playing sound only if it's not already playing
+		#sound.play()
 		
 	if abs(input.x) > abs(input.y):
 		if input.x > 0:
